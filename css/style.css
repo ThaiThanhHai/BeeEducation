@@ -1,0 +1,1160 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+:root {
+    --bee: #f76707;
+    --main: #ff9d03;
+    --scroll: #e7b462;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #666;
+    --black3: #333;
+    --error: #f33a58;
+    --hover: rgba(247, 103, 7, 0.7);
+}
+
+*::selection{
+    background: var(--bee);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--scroll);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bee);
+}
+
+section {
+    min-height: 100vh;
+}
+
+body {
+    background: var(--white);
+    box-shadow: 0 10px 100px rgba(0,0,0,0.5);
+    padding: 0 8%;
+}
+
+/* CSS button starts */
+.btn{
+    padding: 0.7rem 3rem;
+    font-size: 2rem;
+    color: var(--white);
+    background: var(--bee);
+    border-radius: 5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -100%;
+    background: #fff9;
+    height: 150%;
+    width: 20%;
+    transform: rotate(25deg);
+    z-index: -1;
+}
+
+.btn:hover::before{
+    left: 120%;
+    transition: 0.3s linear;
+}
+/* CSS button ends */
+/* ============================ */
+/* CSS header start */
+.heading{
+    color: var(--black2);
+    padding: 10px;
+    font-size: 26px;
+    text-align: left;
+
+}
+
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 8%;
+    background: var(--main);
+    text-shadow: 0px 5px 50px rgba(0, 0, 0, 0.2);
+}
+
+header .previous{
+    color: var(--white);
+    font-size: 20px;
+    line-height: 20px;
+    transition: 0.05s all ease-in-out;
+    outline: none;
+    background-color: var(--main);
+    cursor: pointer;
+}
+
+header .previous:hover{
+    color: var(--grey);
+}
+
+header .logo {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+
+header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+header .navbar ul li {
+    margin: 0 10px;
+}
+
+header .navbar ul li a{
+    font-size: 20px;
+    color: var(--white);
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color: var(--black2);
+}
+
+
+.personal .user {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: var(--white);
+    height: 100%;
+    cursor: pointer;
+}
+
+.personal .user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.personal .sub-menu{
+    background:var(--white);
+    text-align: left;
+    position: absolute;
+    border-radius: 5px;
+    top: 70px;
+    display: none;
+}
+
+.personal .sub-menu::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    transform: rotate(45deg);
+}
+
+.personal .sub-menu::after{
+    content: '';
+    position: absolute;
+    width: 200px;
+    right: 0;
+    top: -16px;
+    height: 20px;
+}
+
+.personal .sub-menu ul{
+    display: inline-block;
+    list-style: none;
+}
+
+.personal .sub-menu ul li{
+    width: 200px;
+    padding: 20px;
+}
+
+.personal .sub-menu ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--black3);
+}
+
+.personal:hover .sub-menu{
+    display: block;
+    position: absolute;
+}
+
+.personal:hover .sub-menu ul {
+    display: block;
+}
+
+.personal:hover .sub-menu ul li {
+    width: 200px;
+    padding: 20px;
+}
+
+.personal:hover .sub-menu ul li a:hover{
+    color: var(--bee)
+}
+
+header #menu {
+    font-size: 20px;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+/* CSS header ends */
+/* ================================== */
+/* CSS home starts */
+.home .home-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px 2%;
+    background: var(--white);
+    min-height: 100vh;
+    gap: 15px;
+    padding-bottom: 0px;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.home-container .content {
+    flex: 1 1 100px;
+}
+
+.home-container .image {
+    flex: 1 1 150px;
+}
+
+.home-container .image img {
+    width: 100%;
+}
+
+
+.home-container  .content .title {
+    font-size: 34px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--main);
+}
+
+.home-container .content p {
+    color: var(--black3);
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+/* CSS hone ends */
+/* ============================== */
+/* CSS about starts */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .image{
+    flex: 1 1 400px;
+}
+
+.about .image img {
+    height: 65vh;
+    width: 100%;   
+}
+
+.about .content{
+    flex: 1 1 600px;
+}
+
+.about .content h3 {
+    font-size: 30px;
+    color: var(--main);
+    font-weight: 600;
+}
+
+.about .content p{
+    font-size: 18px;
+    color: var(--black3);
+    text-shadow: 0px 5px 50px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-right: 50px;
+    font-weight: 400;
+    line-height: 30px;
+}
+/* CSS home ends */
+/* ==================================== */
+/* CSS course starts */
+.course {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.course h1 {
+    color: var(--black1);
+    text-align: left;
+    margin-bottom: -240px;
+}
+.course .course-container {
+    width: 100%;
+    height: 50vh;
+}
+
+
+.course-container .box {
+    width: 340px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.course-container .box img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.course-container .box .title {
+    padding: 10px;
+    color: var(--black3);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.course-container .box .title:hover {
+    color: var(--black2);
+}
+
+/* CSS course ends */
+
+/* ------------------ */
+.blog {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.blog h1 {
+    color: var(--black1);
+    text-align: left;
+    margin-bottom: -240px;
+}
+.blog .blog-container {
+    width: 100%;
+    height: 50vh;
+}
+
+
+.blog-container .box {
+    width: 340px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.blog-container .box img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.blog-container .box .title {
+    padding: 10px;
+    color: var(--black3);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.blog-container .box .title:hover {
+    color: var(--black2);
+}
+
+/* --------------- */
+/* ===================================== */
+/* CSS review starts */
+
+.review {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.review h1 {
+    color: var(--black1);
+    text-align: left;
+    margin-bottom: -240px;
+}
+
+.review-container .feel{
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.08);
+    width: 320px;
+    height: 200px;
+    margin: 5rem auto;
+    padding-bottom: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.review-container .feel .icon {
+    position: absolute;
+    top: 10px; 
+    right: 15px;
+    font-size: 30px;
+    color: var(--main);
+}
+
+.review-container .feel .user {
+    display: flex;
+    align-items: center;
+}
+
+.review .review-container .feel img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.review-container .feel .user-info {
+    color: var(--black3);
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.feel .user .user-info .stars i{
+    color: var(--main);
+    font-size: 16px;
+}
+
+.review-container .feel .text {
+    color: var(--black2);
+    font-size: 1.5rem;
+    padding: 10px;
+    font-style: italic;
+}
+/* CSS reviews ends */
+/* =================================== */
+
+/* CSS footer starts */
+.footer{
+    background: var(--black3);
+    margin-left: -10%;
+    margin-right: -10%;
+
+}
+
+.footer .container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer .container .box {
+    margin: 15px 0px;
+    text-align: center;
+    flex: 1 1 250px;
+}
+
+.footer .container .box h3 {
+    font-size: 26px;
+    color: var(--white);
+    padding: 10px 0;
+}
+
+.footer .container .box p {
+    font-size: 18px;
+    color: var(--grey);
+    padding: 0.7rem 0;
+}
+
+.footer .container .box p i {
+    padding-right: 5px;
+    color: var(--main);
+}
+
+.footer .container .box a{
+    font-size: 18px;
+    display: block;
+    padding: 5px 0;
+    color: var(--white);
+}
+
+.footer .credit{
+    padding: 20px 10px;
+    font-size: 20px;
+    color: var(--white);
+    background: var(--black1);
+    text-align: center;
+    font-weight: normal;
+}
+
+.footer .credit a {
+    color: var(--main);
+    text-transform: lowercase;
+}
+/* CSS footer ends */
+
+
+/* ========================= */
+/* CSS CourseDetails */
+.CourseDetails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+.CourseDetails .left {
+    flex: 1 1 600px;
+}
+
+.left  .courseName {
+    color: var(--black1);
+    margin: 16px 0px;
+    font-size: 32px;
+    font-weight: 600;
+    min-height: 32px;
+    text-transform: capitalize;
+}
+
+.left .textContent {
+    line-height: 24px;
+    font-size: 16px;
+    color: var(--black3);
+    text-align: justify;
+}
+
+.left .request h3,
+.left .topicList h3{
+    margin: 20px 0 4px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.left .topicList ul {
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left .topicList ul li {
+    position: relative;
+    flex-basis: 48%;
+    margin-bottom: 12px;
+    margin-right: 1%;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--black3);
+    list-style: none;
+}
+
+.left .topicList ul li i {
+    color: var(--bee);
+    margin-right: 10px;
+}
+
+.left .Curriculum .headerSticky{
+    top: 66px;
+    z-index: 2;
+    padding-bottom: 4px;
+    background-color: var(--white); 
+}
+
+.Curriculum .headerSticky .headerBlock {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerSticky .headerBlock h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.headerSticky .subHeaderWrapper{
+    color: var(--black2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 4px;
+
+}
+
+.headerSticky .subHeaderWrapper ul {
+    display: flex;
+    list-style: none;
+}
+
+.headerSticky .subHeaderWrapper ul li{
+    padding-right: 14px;
+}
+
+.headerSticky .subHeaderWrapper .toggleBtn {
+    color: var(--bee);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.Curriculum .panelGroup {
+    margin: 15px 0 20px;
+}
+
+.panelGroup .Panel{
+    margin-bottom: 10px;
+}
+
+.panelGroup .Panel .panelHeading {
+    position: relative;
+    font-size: 16px;
+    color: inherit;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 6px;
+    background: #ddd;
+    box-shadow: 1px 1px 5px rgba(102, 102, 102, 0.8);
+}
+
+.panelGroup .Panel .panelHeading::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    font-weight: 900;
+    color: var(--bee);
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.panelGroup .Panel .panelHeading h5 {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black1);
+}
+
+.panelGroup .Panel .panelBody {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.panelGroup .Panel.accordion .panelBody{
+    height: auto;
+}
+
+.panelGroup .Panel.accordion .panelHeading::before{
+    content: '-';
+}
+
+.panelGroup .Panel .panelBody .lessonItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0;
+    padding: 10px 0;
+    background: rgb(245, 240, 240);
+    box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.8);
+}
+
+.Curriculum .panelGroup .Panel .lessonItem .lessonName{
+    color: var(--black3);
+    font-size: 16px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.panelGroup .Panel .lessonItem .lessonTime {
+    color: var(--black3);
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.left .request ul {
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left .request ul li {
+    position: relative;
+    flex-basis: 100%;
+    margin-bottom: 12px;
+    margin-right: 1%;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--black3);
+    list-style: none;
+}
+
+.left .request ul li i {
+    color: var(--bee);
+    margin-right: 10px;
+}
+
+
+.CourseDetails .right {
+    flex: 1 1 200px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.right .video-intro iframe {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(102, 102, 102, 0.8);
+    position: relative;
+}
+
+.right h5 {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--bee);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.right .learnNow {
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+
+.right .learnNow a{
+    color: var(--white);
+}
+
+.right ul {
+    text-align: left;
+    list-style: none;
+    margin: 30px;
+}
+
+.CourseDetails .right ul li {
+    position: relative;
+    line-height: 16px;
+    font-size: 16px;
+    color: var(--black3);
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+
+.right ul li i {
+    margin-right: 15px;
+    color: var(--bee);
+}
+/* CSS coursedetails ends */
+/* ====================================== */
+/* CSS lesson starts*/
+.heading-lesson {
+    color: var(--black3);
+    font-size: 30px;
+    padding: 10px;
+    padding-left:  6%;
+    background: var(--main);
+}
+
+.lesson-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+    margin-top: 70px;  
+}
+
+.lesson-container .main-video {
+    background: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.main-video iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px rgb(191, 191, 191, 0.5);
+   
+}
+
+.main-video .title {
+    color: var(--black3);
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-video .text{
+    color: var(--black1);
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.main-video .contact ul li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-video .contact ul li p {
+    font-size: 16px;
+    color: var(--black3);
+    margin-right: 4px;
+}
+
+.main-video .contact ul li a {
+    text-decoration: none;
+    color: var(--bee);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-video .comments{
+    margin-top: 30px;
+    margin-bottom: 200px;    
+}
+
+.main-video .comments .form-comment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-video .comments .form-comment img{
+    height: 50px;
+    width: 7%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.main-video .comments .form-comment form{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.main-video .comments .form-comment form .cmt-form{
+    height: 70%;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid var(--black3);
+    margin-right: 10px;
+    padding-left: 10px;
+    color: var(--black2);
+    font-size: 20px;
+}
+
+.main-video .comments .form-comment form .cmt-btn{
+    height: 70%;
+    width: 20%;
+    border-radius: 10px;
+    background: var(--bee);
+    color: var(--white);
+    font-size: 20px;
+    line-height: 70%;
+}
+
+.main-video .comments .content{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.main-video .comments .content img{
+    height: 50px;
+    width: 7%;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+
+.main-video .comments .content .user-content{
+    height: auto;
+    width: auto;
+    border-radius: 20px;
+    font-size: 20px;
+    color: var(--black1);
+    background: #ddd;
+    line-height: 50px;
+    padding: 4px 12px;
+}
+
+.lesson-container .video-list {
+    background: var(--white);
+    border-radius: 10px;
+    height: 520px;
+    overflow-y: scroll;
+}
+
+.video-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.video-list::-webkit-scrollbar-track {
+    background:var(--scroll);
+    border-radius: 50px;
+}
+
+.lesson-container .video-list::-webkit-scrollbar-thumb{
+    background: #ff9d03;
+    border-radius: 50px;
+}
+
+.video-list .vid a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 6px 6px 10px rgba(191, 191, 191, 0.05);
+    cursor: pointer;
+}
+
+.video-list .vid:hover {
+    background: var(--grey);
+}
+
+.video-list .vid.active a{
+    background: var(--main);
+}
+
+.video-list .vid.active a .icon,
+.video-list .vid.active a .title,
+.video-list .vid.active a .title p {
+    color: var(--white);
+}
+
+.video-list .vid a .icon {
+    color: var(--bee);
+    font-size: 17px;
+} 
+
+.video-list .vid a .title {
+    color: var(--black3);
+    font-size: 17px;
+} 
+
+.video-list .vid a .title p {
+    font-size: 13px;
+    color: var(--black3);
+    font-weight: 500;
+}
+/* CSS lesson ends */
+
+/* CSS introduce starts */
+.intro-content{
+    width: 75%;
+    margin: 70px auto;
+    top: 70px;
+}
+
+.intro-content h2 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 55px;
+}
+
+.intro-content h3 {
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 35px;
+}
+
+.intro-content p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: justify;
+}
+/* CSS introduce ends */
+
+/* CSS blog starts */
+.blog-content {
+    width: 75%;
+    margin: 70px auto;
+    top: 70px;  
+}
+
+.blog-content h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 100px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.blog-content h2 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 55px;
+}
+
+.blog-content h3 {
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 35px;
+}
+
+.blog-content ul{
+    margin-left: 40px;
+}
+
+.blog-content ul li,
+.blog-content p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.blog-content img{
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+}
+/* CSS blog ends */
+
+/* Responsive starts */
+@media (max-width:991px) {
+    .lesson-container {
+        grid-template-columns: 1.5fr 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width:768px){
+    .lesson-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px){
+    html {
+        font-size: 55%;
+    }
+
+    header #menu{
+        display: block;
+    }
+
+    header .navbar{
+        position: fixed;
+        top: -120%;
+        left: 0;
+        width: 100%;
+        background: #444;
+    }
+
+    header .navbar ul {
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li {
+        margin: 1.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    header .navbar ul li a {
+        font-size: 2.5rem;
+        display: block;
+    }
+
+    header .navbar ul li a.active,
+    header .navbar ul li a:hover{
+        color: #f76707;
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    header .navbar.nav-toggle{
+        top: 6.4rem;
+    }
+
+    .home h1{
+        font-size: 4rem;
+    }
+
+    .home p {
+        width: auto;
+    }
+
+    .contact .row .image{
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 500px){
+    html {
+        font-size: 50%;
+    }
+
+    .contact .row form .box{
+        width: 100%;
+    }
+}
